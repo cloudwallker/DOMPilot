@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Search fixture</title>
+</head>
+<body>
+  <h1>Library search</h1>
+  <form id="search-form">
+    <label for="query">Search</label>
+    <input id="query" name="query" type="search">
+    <button type="submit">Search</button>
+  </form>
+  <p id="result" role="status" aria-live="polite"></p>
+  <script>
+    document.querySelector('#search-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.querySelector('#result').textContent = 'Search results: Transformer';
+    });
+  </script>
+</body>
+</html>

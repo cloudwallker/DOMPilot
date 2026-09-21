@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dompilot"
+version = "0.1.0"
+description = "A tiny browser agent for learning structured action spaces"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["playwright>=1.49", "pydantic>=2.10,<3", "openai>=1.60"]
+
+[project.scripts]
+dompilot = "dompilot.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.9", "jsonschema>=4.23"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["dompilot"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = [".python", ".browsers", ".uv-cache"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

@@ -1,0 +1,28 @@
+name: checks
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.8"
+          enable-cache: true
+      - run: uv python install 3.12
+      - run: uv sync --locked --python 3.12
+      - if: runner.os == 'Linux'
+        run: uv run playwright install --with-deps chromium
+      - if: runner.os == 'Windows'
+        run: uv run playwright install chromium
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest
+      - run: uv run python -m benchmarks.run --repeats 5
