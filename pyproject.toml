@@ -14,10 +14,25 @@ dependencies = ["playwright>=1.49", "pydantic>=2.10,<3", "openai>=1.60"]
 dompilot = "dompilot.cli:main"
 
 [dependency-groups]
-dev = ["pytest>=8", "ruff>=0.9", "jsonschema>=4.23"]
+dev = ["ruff>=0.9"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["dompilot"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/.env.example",
+  "/README.md",
+  "/pyproject.toml",
+  "/uv.lock",
+  "/dompilot",
+  "/benchmarks/__init__.py",
+  "/benchmarks/run.py",
+  "/benchmarks/support.py",
+  "/benchmarks/pages/*.html",
+  "/docs/implementation.md",
+  "/examples/trace.search.json",
+]
 
 [tool.ruff]
 target-version = "py311"

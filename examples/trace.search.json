@@ -1,0 +1,360 @@
+{
+  "trace_version": 1,
+  "software": {
+    "dompilot": "0.1.0"
+  },
+  "url": "http://127.0.0.1:8000/search.html",
+  "task": "Search for Transformer and submit the search.",
+  "config": {
+    "headless": true,
+    "max_steps": 20,
+    "max_failures": 3,
+    "max_waits": 3,
+    "max_repeats": 3,
+    "max_seconds": 180.0,
+    "model_timeout": 30.0,
+    "navigation_timeout": 15.0,
+    "action_timeout": 3.0,
+    "run_dir": "runs/benchmark"
+  },
+  "model": {},
+  "started_at": "2000-01-01T00:00:00+00:00",
+  "navigation": {
+    "success": true,
+    "latency": 2.202999999997701
+  },
+  "steps": [
+    {
+      "number": 1,
+      "input": {
+        "task": "Search for Transformer and submit the search.",
+        "snapshot": {
+          "snapshot_id": "s1",
+          "url": "http://127.0.0.1:8000/search.html",
+          "title": "Search fixture",
+          "targets": [
+            {
+              "id": 1,
+              "kind": "search",
+              "name": "Search",
+              "placeholder": "",
+              "value": "",
+              "context": "",
+              "actions": [
+                "TYPE_TEXT"
+              ],
+              "options": [],
+              "checked": null,
+              "href": ""
+            },
+            {
+              "id": 2,
+              "kind": "button",
+              "name": "Search",
+              "placeholder": "",
+              "value": "",
+              "context": "",
+              "actions": [
+                "CLICK"
+              ],
+              "options": [],
+              "checked": null,
+              "href": ""
+            }
+          ],
+          "feedback": "Library search",
+          "scroll_y": 0.0,
+          "viewport_height": 800.0,
+          "can_scroll_up": false,
+          "can_scroll_down": false,
+          "omitted": 0,
+          "omitted_options": 0,
+          "blocked_reason": null
+        },
+        "action_space": {
+          "targets": {
+            "TYPE_TEXT": [
+              1
+            ],
+            "CLICK": [
+              2
+            ]
+          },
+          "select_options": {},
+          "controls": [
+            "WAIT",
+            "DONE",
+            "BLOCKED"
+          ]
+        },
+        "history": []
+      },
+      "target_count": 2,
+      "omitted": 0,
+      "input_chars": 2439,
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0
+      },
+      "llm_latency": 0.0,
+      "action": "TYPE_TEXT",
+      "reason": "Follow the task using the current page state",
+      "target": 1,
+      "result": {
+        "success": true,
+        "error": null,
+        "latency": 0.06199999999807915,
+        "side_effect_possible": false,
+        "executed": true
+      },
+      "error": null,
+      "action_latency": 0.06199999999807915,
+      "observe_latency": 0.07800000000133878,
+      "wait_latency": 0.10900000000037835,
+      "decision": {
+        "snapshot_id": "s1",
+        "decision": {
+          "reason": "Follow the task using the current page state",
+          "action": "TYPE_TEXT",
+          "target": 1,
+          "text": "Transformer"
+        }
+      }
+    },
+    {
+      "number": 2,
+      "input": {
+        "task": "Search for Transformer and submit the search.",
+        "snapshot": {
+          "snapshot_id": "s2",
+          "url": "http://127.0.0.1:8000/search.html",
+          "title": "Search fixture",
+          "targets": [
+            {
+              "id": 1,
+              "kind": "search",
+              "name": "Search",
+              "placeholder": "",
+              "value": "Transformer",
+              "context": "",
+              "actions": [
+                "TYPE_TEXT"
+              ],
+              "options": [],
+              "checked": null,
+              "href": ""
+            },
+            {
+              "id": 2,
+              "kind": "button",
+              "name": "Search",
+              "placeholder": "",
+              "value": "",
+              "context": "",
+              "actions": [
+                "CLICK"
+              ],
+              "options": [],
+              "checked": null,
+              "href": ""
+            }
+          ],
+          "feedback": "Library search",
+          "scroll_y": 0.0,
+          "viewport_height": 800.0,
+          "can_scroll_up": false,
+          "can_scroll_down": false,
+          "omitted": 0,
+          "omitted_options": 0,
+          "blocked_reason": null
+        },
+        "action_space": {
+          "targets": {
+            "TYPE_TEXT": [
+              1
+            ],
+            "CLICK": [
+              2
+            ]
+          },
+          "select_options": {},
+          "controls": [
+            "WAIT",
+            "DONE",
+            "BLOCKED"
+          ]
+        },
+        "history": [
+          {
+            "action": "TYPE_TEXT",
+            "success": true
+          }
+        ]
+      },
+      "target_count": 2,
+      "omitted": 0,
+      "input_chars": 2493,
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0
+      },
+      "llm_latency": 0.0,
+      "action": "CLICK",
+      "reason": "Follow the task using the current page state",
+      "target": 2,
+      "result": {
+        "success": true,
+        "error": null,
+        "latency": 0.10900000000037835,
+        "side_effect_possible": false,
+        "executed": true
+      },
+      "error": null,
+      "action_latency": 0.10900000000037835,
+      "observe_latency": 0.046999999998661224,
+      "wait_latency": 0.125,
+      "decision": {
+        "snapshot_id": "s2",
+        "decision": {
+          "reason": "Follow the task using the current page state",
+          "action": "CLICK",
+          "target": 2
+        }
+      }
+    },
+    {
+      "number": 3,
+      "input": {
+        "task": "Search for Transformer and submit the search.",
+        "snapshot": {
+          "snapshot_id": "s3",
+          "url": "http://127.0.0.1:8000/search.html",
+          "title": "Search fixture",
+          "targets": [
+            {
+              "id": 1,
+              "kind": "search",
+              "name": "Search",
+              "placeholder": "",
+              "value": "Transformer",
+              "context": "",
+              "actions": [
+                "TYPE_TEXT"
+              ],
+              "options": [],
+              "checked": null,
+              "href": ""
+            },
+            {
+              "id": 2,
+              "kind": "button",
+              "name": "Search",
+              "placeholder": "",
+              "value": "",
+              "context": "",
+              "actions": [
+                "CLICK"
+              ],
+              "options": [],
+              "checked": null,
+              "href": ""
+            }
+          ],
+          "feedback": "Library search | Search results: Transformer",
+          "scroll_y": 0.0,
+          "viewport_height": 800.0,
+          "can_scroll_up": false,
+          "can_scroll_down": false,
+          "omitted": 0,
+          "omitted_options": 0,
+          "blocked_reason": null
+        },
+        "action_space": {
+          "targets": {
+            "TYPE_TEXT": [
+              1
+            ],
+            "CLICK": [
+              2
+            ]
+          },
+          "select_options": {},
+          "controls": [
+            "WAIT",
+            "DONE",
+            "BLOCKED"
+          ]
+        },
+        "history": [
+          {
+            "action": "TYPE_TEXT",
+            "success": true
+          },
+          {
+            "action": "CLICK",
+            "success": true
+          }
+        ]
+      },
+      "target_count": 2,
+      "omitted": 0,
+      "input_chars": 2563,
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "api_calls": 0
+      },
+      "llm_latency": 0.0,
+      "action": "DONE",
+      "reason": "Follow the task using the current page state",
+      "target": null,
+      "result": null,
+      "error": null,
+      "action_latency": 0.0,
+      "observe_latency": 0.0,
+      "wait_latency": 0.0,
+      "decision": {
+        "snapshot_id": "s3",
+        "decision": {
+          "reason": "Follow the task using the current page state",
+          "action": "DONE"
+        }
+      }
+    }
+  ],
+  "status": "verified_success",
+  "reason": "done",
+  "verification": "passed",
+  "metrics": {
+    "steps": 3,
+    "model_calls": 3,
+    "decisions": 3,
+    "successes": 2,
+    "failures": 0,
+    "model_failures": 0,
+    "validation_failures": 0,
+    "action_failures": 0,
+    "browser_actions": 2,
+    "api_calls": 0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null,
+    "input_tokens_known": 0,
+    "output_tokens_known": 0,
+    "total_tokens_known": 0,
+    "usage_complete": false,
+    "llm_latency": 0.0,
+    "action_latency": 0.171,
+    "observe_latency": 0.266,
+    "wait_latency": 0.234,
+    "browser_latency": 0.671,
+    "navigation_latency": 2.203,
+    "elapsed_seconds": 3.313
+  },
+  "browser": {
+    "channel": "chromium",
+    "version": "example"
+  }
+}

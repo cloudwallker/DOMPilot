@@ -27,14 +27,11 @@ secrets*.json
 *.egg-info/
 build/
 
-# Local development material; keep the public repository source-only
+# Keep local test and generated material out of the public repository.
 **/superpowers/
 **/tests/
 **/test/
 /.github/
-/docs/
-/benchmarks/
 /artifacts/
 /e2e/
-/examples/
 /AGENTS.md
