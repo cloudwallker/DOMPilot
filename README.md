@@ -1,19 +1,16 @@
 # DOMPilot
 
-**中文简介：** DOMPilot 是一个小型、可学习、可解释的 Browser Agent。它将网页 DOM
-压缩为带编号的结构化状态，让模型每轮选择一个受约束的动作，经过验证后执行，
-并通过离线基准与 JSON Trace 展示决策、结果和耗时。
+### A small browser agent for learning structured actions
 
-**English overview:** DOMPilot is a small, readable browser agent for learning how
-structured action spaces work. It compresses the live DOM into indexed snapshots,
-validates one model-selected action per step, and records decisions, outcomes, and
-timings in JSON traces. Built with Python, Playwright, and Pydantic, it includes a
-manual mode, OpenAI-compatible models, and an offline benchmark with independent
-success checks. No agent framework or API key is required for the offline demo.
+**Explore a browser agent one step at a time: inspect numbered DOM snapshots, try manual or model-selected actions, and follow each decision, result, and timing in a local JSON trace.**
 
-这是一个面向学习的小型 Python 项目：先人工操作编号元素，再替换为模型决策，
-逐步理解 Snapshot、上下文压缩、动态动作约束、失效引用保护与停止机制。
-每步输入、动作、结果和耗时保存在本地 JSON Trace。
+**从人工操作编号元素到模型选择受约束动作，逐步理解浏览器 Agent 的工作方式；通过本地 JSON Trace 查看每一步的输入、决策、结果与耗时。**
+
+For learning and authorized, low-risk experiments. The offline demo uses local test pages and a simulated model without an API key; it does not measure real model performance.
+
+面向学习及授权范围内的低风险实验。离线演示使用本地测试页面与模拟模型，无需 API Key，不代表真实模型能力或性能。
+
+[Offline demo / 离线演示](#安装与离线演示) · [Trace example / 轨迹示例](examples/trace.search.json) · [Scope and limits / 范围与限制](#教学范围与上游借鉴)
 
 ## 安装与离线演示
 
