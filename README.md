@@ -12,6 +12,8 @@ For learning and authorized, low-risk experiments. The offline demo uses local t
 
 [Offline demo / 离线演示](#安装与离线演示) · [Trace example / 轨迹示例](examples/trace.search.json) · [Scope and limits / 范围与限制](#教学范围与上游借鉴)
 
+![DOMPilot](docs/images/cartoon-infographic.png)
+
 ## 安装与离线演示
 
 需要 Python 3.11+ 和 uv。以下命令从源码根目录运行：
