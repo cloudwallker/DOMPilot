@@ -1,14 +1,14 @@
 # DOMPilot
 
-### A small browser agent for learning structured actions
+### Learn browser agents through structured actions and visible traces
 
 **Explore a browser agent one step at a time: inspect numbered DOM snapshots, try manual or model-selected actions, and follow each decision, result, and timing in a local JSON trace.**
 
 **从人工操作编号元素到模型选择受约束动作，逐步理解浏览器 Agent 的工作方式；通过本地 JSON Trace 查看每一步的输入、决策、结果与耗时。**
 
-For learning and authorized, low-risk experiments. The offline demo uses local test pages and a simulated model without an API key; it does not measure real model performance.
+For learning and authorized, low-risk experiments. Start with local test pages and a simulated model, then inspect the observe–decide–act loop through the trace. The offline demo runs without an API key.
 
-面向学习及授权范围内的低风险实验。离线演示使用本地测试页面与模拟模型，无需 API Key，不代表真实模型能力或性能。
+面向学习及授权范围内的低风险实验。从本地测试页面与模拟模型开始，通过轨迹检查「观察—决策—执行」循环；离线演示无需 API Key。
 
 [Offline demo / 离线演示](#安装与离线演示) · [Trace example / 轨迹示例](examples/trace.search.json) · [Scope and limits / 范围与限制](#教学范围与上游借鉴)
 
@@ -198,9 +198,9 @@ uv run python -m benchmarks.run --mode fake --repeats 5
 借鉴 [Jev Ultrafast](https://github.com/browser-use/jev-ultrafast) 的结构化状态、
 临时编号、约束动作和低开销循环。上游使用 TypeSafe `questions/criteria` 与
 Browser Harness/CDP；本项目独立采用 Playwright、Pydantic 和兼容 API，
-不复制专用协议，不承诺上游延迟。参见
+各阶段耗时由本项目的 Trace 指标记录。参见
 [上游模型实现](https://github.com/browser-use/jev-ultrafast/blob/main/jev_ultrafast/model.py)
 与 [性能测量边界](https://github.com/browser-use/jev-ultrafast/blob/main/docs/performance.md)。
-MVP 不引入多 Agent、RAG、MCP、长期记忆或复杂规划器。
+核心围绕 DOM 观察、受约束动作、顺序执行与轨迹记录组织，便于逐模块阅读和实验。
 
 模块契约、代码规模与验证范围见 [实施说明](docs/implementation.md)。
