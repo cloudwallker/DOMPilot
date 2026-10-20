@@ -46,6 +46,7 @@ function kindAndActions(node) {
   if (tag === 'input') {
     const type = (node.getAttribute('type') || 'text').toLowerCase();
     if (['checkbox', 'radio'].includes(type)) return [type, ['CLICK']];
+    if (['submit', 'button', 'reset'].includes(type)) return ['button', ['CLICK']];
     if (['text', 'search', 'email', 'url', 'tel'].includes(type) && !node.readOnly) {
       return [type, ['TYPE_TEXT']];
     }
@@ -71,6 +72,11 @@ function nameOf(node) {
   if (node.labels && node.labels.length) {
     const labels = [...node.labels].map(item => normalize(item.textContent)).filter(Boolean);
     if (labels.length) return normalize(labels.join(' '));
+  }
+  if (node.tagName.toLowerCase() === 'input' &&
+      ['submit', 'button', 'reset'].includes(node.type)) {
+    const value = normalize(node.value);
+    if (value) return value;
   }
   const text = normalize(node.textContent);
   if (text) return text;
