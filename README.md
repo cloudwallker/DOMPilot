@@ -129,6 +129,11 @@ viewport 内控件，名称 120 字符，值/上下文各 200 字符，选项每
 反馈文本 1000 字符。状态加动作列表限制 12,000 字符，完整 messages/Schema 限制
 32,000 字符；历史保留最近五步。字符预算不冒充精确 token 数。裁剪删除完整记录，
 再同步生成动作空间。简化命名按 ARIA、label、文本、placeholder/title 取值。
+原生 `input` 的 `submit`、`button`、`reset` 类型提供 `CLICK`，名称在显式
+ARIA/label 之后优先使用 `value`。
+
+Native `input` buttons (`submit`, `button`, and `reset`) expose `CLICK`; their names
+use `value` after explicit ARIA names and labels.
 
 **编号为什么减少幻觉？** 模型只能选实际观察到的目标，不能猜 CSS/XPath；
 但合法编号仍可能不符合任务意图，因此需要执行检查与独立验证。
@@ -175,6 +180,7 @@ DOM Verifier 确认结果；API 调用为 0，token 为未知值。示例中的�
 ```console
 uv run ruff check .
 uv run ruff format --check .
+uv run python -m unittest discover -s tests -v
 uv run python -m benchmarks.run --mode fake --repeats 5
 ```
 

@@ -35,3 +35,8 @@ build/
 /artifacts/
 /e2e/
 /AGENTS.md
+
+# Ship the native input button regression without exposing other local tests.
+!/tests/
+/tests/*
+!/tests/test_input_buttons.py
